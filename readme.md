@@ -72,6 +72,24 @@ Es gibt drei Arten von Blob-Container in Azure Blob Storage:
                 
                     Was in einem Blob gespeichert werden soll, hängt von den spezifischen Anforderungen der Anwednung oder Projekts ab.
 
-                
+## Git - Source Control              
+Git ist ein Versionskontrollsystem, das die Verwaltung von Quellcode ermöglicht, indem es Änderungen nachverfolgt, Branches unterstützt und die Zusammenarbeit zwischen Entwicklern erleichtert.
 
+- Pull request: Ist eine Anfrage, Änderung aus einem Branch in einen anderen zu integrieren. Es ermgöglicht Entwicklern, Codeänderungen zu überprüfen, Feedback zu geben und sicherzustellen,
+  dass sie den Richtlinien und Standards entsprechen, bevor sie in den Hauptcode übernommen werden. 
+
+- Branche: Ein Branch ist eine isolierter Bereich der Entwicklung, die es Entwicklern ermöglicht, unabhängig voneinander an verschiedenen Funktionen oder Änderungen zu arbeiten. Jeder
+  Branch repräsentiert einen seperaten Entwicklungszweig, der vo Hautpcode abzweigt. Dadurch können Entwickler Änderungen isolieren, organisieren und testen, bevor sie in den Hauptcode integriert werden.
+
+- Commit: Ein Commit ist eine Aktion, bei der Änderungen an Dateien im Repository dauerhaft gespeichert werden. Ein Commit erstellt einen Schnappschuss des Codes zu einem bestimmten 
+  Zeitpunkt, der als Referenzpunkt verwendet werden kann. Jeder Commit hat eine eindeutige Kennung und eine Nachricht, die die durchgeführten Änderungen beschreibt. Diese ermöglichen es Entwicklern, die Entwicklungsgeschichte des Codes nachzuverfolgen und bei Bedarf auf frühere Versionen zurückzugreifen.
+
+## GitHub
+Github ist eine Plattform zur Versionsverwaltung und Kollaboartion, die auf Git basiert. 
+
+- Repository: Ein Speicherort für Projekte, der den Quellcode, Issues, Pull Requests und andere Dateien enthält. 
+
+- Action: Automatisierte Workflows, die in einem GitHub-Repository definiert sind, z.B. Tests oder Bereitstellungen. 
+
+- Service Principal: Ein Identitätsobjekt in Azure Active Directory, das verwendet wird, um automatisierte Aufgaben wie Bereitstellungen von Ressourcen in Azure durch GitHub-Workflows.
                 
