@@ -26,11 +26,11 @@ Vorteile von Bicep:
 
                     Wiederholbare Ergebnisse: 
                     Wähend des gesamten Entwicklungszyklus kann die Infrastruktur wiederholt bereitgestellt werden und sicher sein, dass die Ressourcen konsistent bereigestellt werden. Bicep Dateien 
-                    sind idemptotent, was bedeutet, dass dieselbe Datei mehrmals bereistellen können und die gleichen Arten von Ressourcen im gleichen Zustand erhalten. 
+                    sind idempotent, was bedeutet, dass dieselbe Datei mehrmals bereistellen können und die gleichen Arten von Ressourcen im gleichen Zustand erhalten. 
                     Anstatt viele Seperate Dateien für Aktualisierungen zu entwickeln, kann eine Datei entwickelt werden, die den gewünschten Zustand repräsentiert. 
 
                     Orchestrierung: 
-                    Es müssen sich keine Gedanken über die Komlexität der Operationnenreihenfolge gemacht werden. Der Resource Manager orchestriert die Bereitstellung 
+                    Es müssen sich keine Gedanken über die Komplexität der Operationnenreihenfolge gemacht werden. Der Resource Manager orchestriert die Bereitstellung 
                     voneinander abhängiger Ressourcen, damit sie in der richtigen reihenfolge erstellt werden. Wenn möglich, werden Ressourcen parallel bereitgestellt, sodass die 
                     Bereitstellung schneller abgschlossen sind als bei seriellen Bereitstellungen. Der Bereistellungsprozess wird mit einem einzigen Befehl ausgeführt.
 
@@ -46,7 +46,7 @@ Vorteile von Bicep:
                     Notwedendigkeit, den Zustand manuell zu verwalten. 
 
                     Keine Verwaltung von Zuständen oder Zustandsdateien: 
-                    Alle relevanten Zustände wedren sicher in Azure gespeichert. Dadurch können Benutzer effizient zusammenarbeiten, ohne sich um die Verwaltung von Zustände kümmern zu müssen.
+                    Alle relevanten Zustände werden sicher in Azure gespeichert. Dadurch können Benutzer effizient zusammenarbeiten, ohne sich um die Verwaltung von Zustände kümmern zu müssen.
 
                     Keine Kosten und Open Source: 
                     Bicep ist kompplett kostenlos Lösungen. Es fallen keine zuätztlichen Kosten für Premiumfunktionen an. Zu dem wird es von Microsoft untesrstützt.
