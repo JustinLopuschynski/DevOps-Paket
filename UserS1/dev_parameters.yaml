@@ -1,4 +1,5 @@
 parameters:
   AppName: DevAppName
   AppServicePlanName: DevAppServicePlan
-  Location: East US
+  Location: West Center EU
+  Resource Group:
