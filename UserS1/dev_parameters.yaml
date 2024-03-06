@@ -1,0 +1,4 @@
+parameters:
+  AppName: DevAppName
+  AppServicePlanName: DevAppServicePlan
+  Location: East US
