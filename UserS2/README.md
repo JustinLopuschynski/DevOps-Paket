@@ -30,7 +30,22 @@ der Broker immer noch verbunden sind, insbesondere in Szenarien, in denen es lä
 
 Diese Nachrichten bilden den Kern der Kommunikation in MQTT. Sie ermöglichen es Geräten, Daten zu veröffentlichen, Daten zu abonnieren, Verbindungen aufrechtzuerhalten und sich bei Bedarf ordnungsgemäß zu trennen.
 
+## Azure IoT Hub 
+Warum ich Azure IoT Hub verwendet habe:
 
+            - Sichere Kommunikation zwischen IoT-Geräten und der Cloud ermöglicht.
+            - Hochgradig skalierbar ist und Millionen von Geräten unterstützt.
+            - Einfache Geräteverwaltung und Integration mit anderen Azure-Diensten bietet.
+            - Erweiterte Funktionen für IoT-Anwendungen bietet.
+            - Unterschiedliche Geräte und Plattformen unterstützt.
 
+Skus: 
+
+            - F1: Die kostenlose SKU, die einige begrenzte Funktionen bietet und für Entwicklungs- und Testzwecke geeignet ist.
+            - S1: Die Standard-SKU, die für die meisten Produktionsanwendungen geeignet ist. Sie bietet eine höhere Kapazität und Funktionen im Vergleich zur kostenlosen SKU.
+            - S2 und S3: Höhere Leistungsstufen mit zusätzlicher Kapazität und Funktionen für anspruchsvollere Anwendungen und Workloads.
+
+            Nähere Informationen: https://learn.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-quotas-throttling
+            
 
 
