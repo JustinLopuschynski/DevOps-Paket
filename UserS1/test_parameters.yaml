@@ -1,0 +1,3 @@
+appName: "webApp_test"
+appServicePlan: "testServicePlan"
+tier: "Basic"

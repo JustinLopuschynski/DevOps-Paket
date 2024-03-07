@@ -1,5 +1,3 @@
-parameters:
-  AppName: DevAppName
-  AppServicePlanName: DevAppServicePlan
-  Location: West Center EU
-  Resource Group:
+appName: "webApp_dev"
+appServicePlan: "devServicePlan"
+tier: "Basic"
