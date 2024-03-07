@@ -1,0 +1,6 @@
+iotHubName: 'dev-IoT-User2'
+skuName: 'S1'
+capacitySize: 10
+
+storageAccountName: dev-storageAccount-UserS3
+storageContainerName: dev-Container-UserS3

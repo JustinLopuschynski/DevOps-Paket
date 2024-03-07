@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.25.53.49325",
+      "templateHash": "9981433299783371907"
+    }
+  },
+  "parameters": {
+    "iotHubName": {
+      "type": "string"
+    },
+    "skuName": {
+      "type": "string"
+    },
+    "capacitySize": {
+      "type": "int"
+    },
+    "storageAccountName": {
+      "type": "string"
+    },
+    "storageContainerName": {
+      "type": "string"
+    },
+    "storageAccountConnectionString": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Devices/IotHubs",
+      "apiVersion": "2021-07-01",
+      "name": "[parameters('iotHubName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "[parameters('skuName')]",
+        "capacity": "[parameters('capacitySize')]"
+      },
+      "properties": {
+        "enableFileUploadNotifications": false
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2021-04-01",
+      "name": "[parameters('storageAccountName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "StorageV2"
+    },
+    {
+      "type": "Microsoft.Devices/routingEndpoints/IotHub",
+      "apiVersion": "2021-07-01",
+      "name": "[format('{0}/to-storage', parameters('iotHubName'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+        "endpointType": "azurestoragecontainer",
+        "endpointResourceGroup": "[resourceGroup().name]",
+        "storageContainers": "[parameters('storageContainerName')]",
+        "connectionString": "[parameters('storageAccountConnectionString')]",
+        "isEnable": true
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.Devices/IotHubs', parameters('iotHubName'))]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
+      ]
+    }
+  ],
+  "outputs": {
+    "iotHubConnectionString": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Devices/IotHubs', parameters('iotHubName')), '2021-07-01').eventHubEndpoints.events.endpoint]"
+    }
+  }
+}
