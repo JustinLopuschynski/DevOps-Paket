@@ -1,6 +1,6 @@
 param iotHubName string
 param skuName string 
-param capcitySize int
+param capacitySize int
 param location string = resourceGroup().location
 
 resource iotHub 'Microsoft.Devices/IotHubs@2021-07-01' = {
@@ -8,6 +8,6 @@ resource iotHub 'Microsoft.Devices/IotHubs@2021-07-01' = {
   location: location
   sku: {
     name: skuName
-    capacity: capcitySize
+    capacity: capacitySize
   }
 }

@@ -26,11 +26,13 @@ Select-AzSubscription -SubscriptionId $subcriptionId
 $ResourceGroup = "DevOpsPaket"
 
 $iotHubName = $parameters.iotHubName
-$skuName = $parameters.appServicePlan
+$skuName = $parameters.skuName
+$capacitySize = $parameters.capacitySize
 
 $bicepParams = @{
     'iotHubName' = $iotHubName
     'skuName' = $skuName
+    'capacitySize' = $capacitySize
 }
 
 New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateFile "app.json" -TemplateParameterObject $bicepParams -Location "West Europe"
