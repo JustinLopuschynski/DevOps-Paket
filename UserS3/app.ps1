@@ -31,6 +31,7 @@ $capacitySize = $parameters.capacitySize
 $storageAccountName = $parameters.storageAccountName
 $storageContainerName = $parameters.storageContainerName
 
+
 $bicepParams = @{
     'iotHubName' = $iotHubName
     'skuName' = $skuName

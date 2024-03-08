@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.25.53.49325",
-      "templateHash": "9981433299783371907"
+      "templateHash": "13393720951220791126"
     }
   },
   "parameters": {
@@ -19,12 +19,6 @@
       "type": "int"
     },
     "storageAccountName": {
-      "type": "string"
-    },
-    "storageContainerName": {
-      "type": "string"
-    },
-    "storageAccountConnectionString": {
       "type": "string"
     },
     "location": {
@@ -41,43 +35,17 @@
       "sku": {
         "name": "[parameters('skuName')]",
         "capacity": "[parameters('capacitySize')]"
-      },
-      "properties": {
-        "enableFileUploadNotifications": false
       }
     },
     {
       "type": "Microsoft.Storage/storageAccounts",
-      "apiVersion": "2021-04-01",
-      "name": "[parameters('storageAccountName')]",
+      "apiVersion": "2021-06-01",
+      "name": "[format('{0}{1}', parameters('storageAccountName'), uniqueString(resourceGroup().id))]",
       "location": "[parameters('location')]",
+      "kind": "StorageV2",
       "sku": {
         "name": "Standard_LRS"
-      },
-      "kind": "StorageV2"
-    },
-    {
-      "type": "Microsoft.Devices/routingEndpoints/IotHub",
-      "apiVersion": "2021-07-01",
-      "name": "[format('{0}/to-storage', parameters('iotHubName'))]",
-      "location": "[parameters('location')]",
-      "properties": {
-        "endpointType": "azurestoragecontainer",
-        "endpointResourceGroup": "[resourceGroup().name]",
-        "storageContainers": "[parameters('storageContainerName')]",
-        "connectionString": "[parameters('storageAccountConnectionString')]",
-        "isEnable": true
-      },
-      "dependsOn": [
-        "[resourceId('Microsoft.Devices/IotHubs', parameters('iotHubName'))]",
-        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
-      ]
+      }
     }
-  ],
-  "outputs": {
-    "iotHubConnectionString": {
-      "type": "string",
-      "value": "[reference(resourceId('Microsoft.Devices/IotHubs', parameters('iotHubName')), '2021-07-01').eventHubEndpoints.events.endpoint]"
-    }
-  }
+  ]
 }
