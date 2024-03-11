@@ -44,12 +44,16 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2021-08-01' = {
     name: 'Standard_LRS'
   }
   kind: 'Storage'
+  properties: {
+    allowBlobPublicAccess: true
+    allowSharedKeyAccess: true
+  }
 }
 
 resource container 'Microsoft.Storage/storageAccounts/blobServices/containers@2021-08-01' = {
   name: '${storageAccountName}/default/${storageContainerName}'
   properties: {
-    publicAccess: 'None'
+    publicAccess: 'Container'
   }
   dependsOn: [
     storageAccount
@@ -89,7 +93,6 @@ resource IoTHub 'Microsoft.Devices/IotHubs@2021-07-02' = {
         {
           name: 'ContosoStorageRoute'
           source: 'DeviceMessages'
-          condition: 'level="storage"'
           endpointNames: [
             storageEndpoint
           ]
