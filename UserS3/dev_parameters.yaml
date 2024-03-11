@@ -1,6 +1,5 @@
-iotHubName: 'dev-IoT-User2'
+demoName: 'DevDemo'
 skuName: 'S1'
-capacitySize: 10
+skuUnits: 10
+d2cPartitions: 2
 
-storageAccountName: dev-storageAccount-UserS3
-storageContainerName: dev-Container-UserS3

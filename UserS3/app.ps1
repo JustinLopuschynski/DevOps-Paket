@@ -25,19 +25,17 @@ $subcriptionId = Read-Host 'subcription ID'
 Select-AzSubscription -SubscriptionId $subcriptionId
 $ResourceGroup = "DevOpsPaket"
 
-$iotHubName = $parameters.iotHubName
 $skuName = $parameters.skuName
-$capacitySize = $parameters.capacitySize
-$storageAccountName = $parameters.storageAccountName
-$storageContainerName = $parameters.storageContainerName
+$skuUnits = $parameters.skuUnits
+$d2cPartitions = $parameters.d2cPartitions
 
 
 $bicepParams = @{
-    'iotHubName' = $iotHubName
     'skuName' = $skuName
-    'capacitySize' = $capacitySize
-    'storageAccountName' = $storageAccountName
-    'storageContainerName' = $storageContainerName
+    'skuUnits' = $skuUnits
+    'd2cPartitions' = $d2cPartitions
 }
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateFile "app.bicep" -TemplateParameterObject $bicepParams 
+#az deployment group create --resource-group blogBicepAzureIoT --template-file AzureIoTDemo.bicep --parameters demoName=JulyOT
 
-New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateFile "app.json" -TemplateParameterObject $bicepParams -Location "West Europe"
+#New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateFile "app.json" -TemplateParameterObject $bicepParams -Location "West Europe"
