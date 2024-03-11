@@ -36,6 +36,7 @@ $bicepParams = @{
     'd2cPartitions' = $d2cPartitions
 }
 New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateFile "app.bicep" -TemplateParameterObject $bicepParams 
+
 #az deployment group create --resource-group blogBicepAzureIoT --template-file AzureIoTDemo.bicep --parameters demoName=JulyOT
 
 #New-AzResourceGroupDeployment -ResourceGroupName $resourceGroup -TemplateFile "app.json" -TemplateParameterObject $bicepParams -Location "West Europe"
