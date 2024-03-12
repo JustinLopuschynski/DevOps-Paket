@@ -23,11 +23,11 @@ $parameters = Get-Content -Path $parametersFile | ConvertFrom-Yaml
 Connect-AzAccount
 $subcriptionId = Read-Host 'subcription ID'
 Select-AzSubscription -SubscriptionId $subcriptionId
-$ResourceGroup = "<your resource group"
 
 $skuName = $parameters.skuName
 $skuUnits = $parameters.skuUnits
 $d2cPartitions = $parameters.d2cPartitions
+$resourceGroup = $parameters.resourceGroup
 
 
 $bicepParams = @{

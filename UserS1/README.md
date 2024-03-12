@@ -8,6 +8,8 @@ Therefore, I would use my browser and we need to create a resource to host a web
 - Task 4: Write a PowerShell Script to deploy all stages. You want to only deploy one stage per execution (./createWebApp.ps1 -Environment dev)
 - Task 5: short documentation why you choose the resource and what other options you found. Compare the different Features
 
+## Different types for Hosting
+
 ## Task 5
 Ich habe mich für die App-Services entschieden, da es Insgesamt eine bequeme und effiziente Möglichkeit, Anwendungen zu entwickeln, bereitzustellen und zu skalieren, ohne sich um die zugrunde liegende Infrastruktur kümmern zu müssen.
 

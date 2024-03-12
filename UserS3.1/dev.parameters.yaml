@@ -2,4 +2,4 @@ demoName: '<your name for the demo>' #exampleName
 skuName: '<sku configuration>' #S1
 skuUnits: '<how much Units do you need in int>' #10
 d2cPartitions: 2
-
+ResourceGroup: '<your Ressource Group>'
