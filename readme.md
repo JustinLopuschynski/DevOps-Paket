@@ -3,7 +3,7 @@
 ## CI / CD
 Ziel von CI / CD, kurz für Continuos Integration und Continuos Delevery / Deployment, ist die Optimierung und Beschleunigung des Softwareentwicklungs-Lifecycle.
 Continous Integration (CI) bezieht sich auf die Praktika, Codeänderungen automatisch und regelmäßig in ein gemeinsamen Quellcode-Respository zu integrieren. 
-Continous Delivery und/oder Continous Deployment (CD) ist ein zweiteiliger Prozess, der die Integration, ees Testen und die Bereitstellung der Codeänderungen umfasst. CD beinhaltet kein automatisches Produktiv-Deployment, während beim Continous Deployment Update-Releases automatsich in die Produktivumgebung übergeben werden. 
+Continous Delivery und/oder Continous Deployment (CD) ist ein zweiteiliger Prozess, der die Integration, das Testen und die Bereitstellung der Codeänderungen umfasst. CD beinhaltet kein automatisches Produktiv-Deployment, während beim Continous Deployment Update-Releases automatsich in die Produktivumgebung übergeben werden. 
 
 ## loT 
 Das Hauptziel von IoT ist es, Objekte Daten sammeln und auszutauschen zu lassen, um die Effizienz, Genauigkeit und Bequemlichkeit in verschiedenen Bereichen zu verbesern. Das selbe prinzip verfolgt die die CI / CD.
@@ -12,20 +12,20 @@ lot und Devops können in vielerlei Hinsichten miteinander verbunden werden, ins
 
 ## Biceps
 Bicep ist eine spezielle Sprache (DSL), die deklarativ Syntax nutzt, um Azure-Ressourcen zu deployen. In einer Bicep-Datei wird die Infrastuktur fesgelegt, die in Azure bereitgestellt werden soll, und verwendet diese Datei dann im gesamten Entwicklungszyklus, um die Infrastruktur wiederholt zu deployen. Die Ressourcen werden in einer konsistenten Weise bereitgestellt.
-Biceo bietet eine präzise Syntax, zuverlässige Typsicherheit und unterstützt die Wiederverendung von Code. Bicep bietet eine erstklassige Effahrung beim Verfassen von Infrastruktur-as-Code-Lösungen in Azure.
+Bicep bietet eine präzise Syntax, zuverlässige Typsicherheit und unterstützt die Wiederverendung von Code. Bicep bietet eine erstklassige Effahrung beim Verfassen von Infrastruktur-as-Code-Lösungen in Azure.
 
 Vorteile von Bicep: 
 
                     Ünterstüzung für alle Ressourcentypen und API-Versionen:
-                    Bicep unterstützt sofort alle Vorschau- und GA-Versionen für Azure-Dienste. Sobals ein Ressourcenanbieter neue Ressourcentypen und API-Versionen einführt, 
-                    können diese Bicep-Dateien verwenden. Dabei muss nicht gewartet werden, dass die Tools aktualisiert werden, bevor die neuen Diensten verwenden können.
+                    Bicep unterstützt sofort alle Vorschau- und GA-Versionen für Azure-Dienste. Sobald ein Ressourcenanbieter neue Ressourcentypen und API-Versionen einführt, 
+                    können diese Bicep-Dateien verwenden. Dabei muss nicht gewartet werden, dass die Tools aktualisiert werden, bevor die neuen Diensten verwendet werden können.
 
                     Einfacher Syntax:
                     Im vergleich zu äquivalenten JSON-Vorlagen sind Bicep-Dateien präziser und leichter zu lesen. Bicep erfordert kein Vorwissen über Programmiersprachen. 
                     Die deklarative Bicep-Syntax gibt an, welche Ressourcen und Eigenschaften der Ressourcen bereigestellt werden soll.
 
                     Wiederholbare Ergebnisse: 
-                    Wähend des gesamten Entwicklungszyklus kann die Infrastruktur wiederholt bereitgestellt werden und sicher sein, dass die Ressourcen konsistent bereigestellt werden. Bicep Dateien 
+                    Während des gesamten Entwicklungszyklus kann die Infrastruktur wiederholt bereitgestellt werden und sicher sein, dass die Ressourcen konsistent bereigestellt werden. Bicep Dateien 
                     sind idempotent, was bedeutet, dass dieselbe Datei mehrmals bereistellen können und die gleichen Arten von Ressourcen im gleichen Zustand erhalten. 
                     Anstatt viele Seperate Dateien für Aktualisierungen zu entwickeln, kann eine Datei entwickelt werden, die den gewünschten Zustand repräsentiert. 
 
@@ -42,8 +42,8 @@ Vorteile von Bicep:
 
                     Vorschau von Änderungen: 
                     Vor dem eigentlichen Bereitstellen der Bicep-Datei kann mit der What-if-Operation eine Vorschau der anstehenden Änderung erhalten. Dadurch sieht man, welche Ressourcen
-                    erstellt werden, aktualisiert oder gelöscht werdne und welche Eigenschaften sich ändern. Diese Vorschau basiert auf dem aktuellen Zustand der Umgebung und eliminiert die
-                    Notwedendigkeit, den Zustand manuell zu verwalten. 
+                    erstellt werden, aktualisiert oder gelöscht werden und welche Eigenschaften sich ändern. Diese Vorschau basiert auf dem aktuellen Zustand der Umgebung und eliminiert die
+                    Notwendigkeit, den Zustand manuell zu verwalten. 
 
                     Keine Verwaltung von Zuständen oder Zustandsdateien: 
                     Alle relevanten Zustände werden sicher in Azure gespeichert. Dadurch können Benutzer effizient zusammenarbeiten, ohne sich um die Verwaltung von Zustände kümmern zu müssen.

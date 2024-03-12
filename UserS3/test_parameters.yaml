@@ -1,8 +1,4 @@
-iotHubName: 'test-IoT-User2'
-demoName: 'TestDemo'
-skuName: 'S1'
+demoName: 'testDemo'
+skuName: 'B1'
 skuUnits: 10
 d2cPartitions: 2
-
-storageAccountName: test-storageAccount-UserS3
-storageContainerName: test-Container-UserS3
