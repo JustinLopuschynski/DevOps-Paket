@@ -34,7 +34,7 @@ jobs:
     - name: Deploy to Azure
       shell: pwsh
         
-        az group deployment create --resource-group DevOpsPaket --template-file testFile.yaml --parameters <PARAMETERS_FILE>
+        az group deployment create --resource-group <RESOURCE_GROUP_NAME> --template-file <TEMPLATE_FILE> --parameters <PARAMETERS_FILE>
       
       run: |
           "<1st script's absolute path>"
