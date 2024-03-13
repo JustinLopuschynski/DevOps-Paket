@@ -1,5 +1,5 @@
 demoName: 'DevDemo'
-skuName: 'B1'
-skuUnits: 10
+skuName: 'F1'
+skuUnits: 1
 d2cPartitions: 2
 ResourceGroup: 'DevOpsPaket'
