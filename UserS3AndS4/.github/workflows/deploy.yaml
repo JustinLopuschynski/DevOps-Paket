@@ -40,6 +40,9 @@ jobs:
           "<1st script's absolute path>"
           "<2st script's absolute path>"
 
+#This command will output a JSON object containing the service principal credentials, including clientId, clientSecret, subscriptionId, and tenantId.
+#az ad sp create-for-rbac --name secretJustin --sdk-auth
+
 #Navigate to your GitHub repository, go to "Settings" > "Secrets" > "New repository secret". Add the following secrets based on the information obtained in step 1:
 #AZURE_CLIENT_ID: The client ID of the service principal.
 #AZURE_CLIENT_SECRET: The client secret of the service principal.
