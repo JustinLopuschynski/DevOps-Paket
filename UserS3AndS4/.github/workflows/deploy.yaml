@@ -1,0 +1,47 @@
+name: Deploy to Azure
+
+#Defines the event that triggers the workflow
+on:
+  push:
+    branches:
+      - main
+
+#Defines a single job named "deploy". This job executes the workflow.
+jobs:
+  deploy:
+    runs-on: windows-latest #Specifies that the job will run on a Windows environment.
+
+    #Defines the steps to be executed int the job.
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2 #Uses the Github Action 'actions/checkout' to fetch the repository code into the runner's workspace.
+
+    - name: Install Azure PowerShell module
+      run: Install-Module -Name Az -Force -AllowClobber
+    
+    #Thies step use Azure PowerShell commands to authenticate with Azure using the Service Proncipal credentials stored as secret in the GitHub repository.
+    - name: Login to Azure
+      run: |
+        $servicePrincipal = @{
+          clientId       = "${{ secrets.AZURE_CLIENT_ID }}"
+          clientSecret   = "${{ secrets.AZURE_CLIENT_SECRET }}"
+          tenantId       = "${{ ecrets.AZURE_TENANT_ID }}"
+        }
+         $credential = New-Object -TypeName PSCredential -ArgumentList $servicePrincipal.clientId, $(ConvertTo-SecureString -String $servicePrincipal.clientSecret -AsPlainText -Force)
+
+          Connect-AzAccount -ServicePrincipal -Credential $credential -Tenant $servicePrincipal.tenantId
+    
+    - name: Deploy to Azure
+      shell: pwsh
+        
+        az group deployment create --resource-group DevOpsPaket --template-file testFile.yaml --parameters <PARAMETERS_FILE>
+      
+      run: |
+          "<1st script's absolute path>"
+          "<2st script's absolute path>"
+
+#Navigate to your GitHub repository, go to "Settings" > "Secrets" > "New repository secret". Add the following secrets based on the information obtained in step 1:
+#AZURE_CLIENT_ID: The client ID of the service principal.
+#AZURE_CLIENT_SECRET: The client secret of the service principal.
+#AZURE_TENANT_ID: The tenant ID of the Azure Active Directory.
+#AZURE_SUBSCRIPTION_ID: The subscription ID of your Azure subscription.
